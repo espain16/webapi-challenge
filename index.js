@@ -14,28 +14,35 @@ const people = [
 	}
 ];
 
-let chores = [];
+let chores = [
+	{
+		id: 1,
+		description: 'Read the quibbler',
+		assignedTo: 1,
+		completed: true
+	},
+	{
+		id: 2,
+		description: 'Visit Dobby, may he rest in paradise',
+		assignedTo: 1,
+		completed: true
+	}
+];
 let choreId = 1;
 
 server.get('/chores', (req, res) => {
-	const completed = req.query.completed;
-
-	if (completed) {
-		let filter = false;
-		if (completed === 'true') {
-			filter = true;
-		} else {
-			filter = false;
-		}
-		const result = chores.filter((chore) => chore.completed === filter);
-	}
 	res.status(200).json(chores);
 });
 
 server.get('/chores/:id', (req, res) => {
-	const chore = chores.find((chore) => chore.id === req.params);
+	const chore = chores.find((chore) => chore.id === Number(req.params));
 });
-server.post('/chores', (req, res) => {});
+server.post('/chores', (req, res) => {
+	const { id, description, assignedTo, completed } = req.body;
+
+	const newChore = { id: choreId };
+});
+
 server.put('/', (req, res) => {});
 server.delete('/chores', (req, res) => {});
 
