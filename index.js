@@ -70,8 +70,15 @@ server.get('hoggyPeople/:id/chores', (req, res) => {
 
 server.post('/chores', (req, res) => {
 	const { id, description, assignedTo, completed } = req.body;
-	const newChore = { id: choreId };
+	const chore = req.body;
+	if (description || assignedTo || completed) {
+		chores.push(chore)
+		res.status(201).json(chores);
+	} else {
+		res.status(400).json({ message: 'required field is missing' })
+	}
 });
+
 
 server.put('/chores/:id', (req, res) => {
 	const chore = chores.find(todo => todo.id == req.params.id)
@@ -82,7 +89,6 @@ server.put('/chores/:id', (req, res) => {
 		res.status(404).json({ message: " No chore with that id is present" })
 	}
 });
-
 
 server.delete('/chores/:id', (req, res) => {
 	chores = chores.filter((chore) => chore.id !== Number(req.params.id));
