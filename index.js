@@ -36,7 +36,13 @@ server.get('/chores', (req, res) => {
 
 server.get('/chores/:id', (req, res) => {
 	const chore = chores.find((chore) => chore.id === Number(req.params));
+	if (chore) {
+		res.status(200).json(chore);
+	} else {
+		res.status(404).json({ message: 'Chore can not be found' });
+	}
 });
+
 server.post('/chores', (req, res) => {
 	const { id, description, assignedTo, completed } = req.body;
 
