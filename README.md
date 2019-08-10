@@ -16,11 +16,11 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
+- [x] Create a forked copy of this project.
+- [x] Add your _Team Lead_ as collaborator on Github.
+- [x] Clone your forked version of the Repository.
 - [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
-- [ ] Implement the project on this Branch, committing changes regularly.
+- [x] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
@@ -38,20 +38,30 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [x] Mention two parts of Express that you learned about this week.
 
-- [ ] What is Express Middleware?
+Two things that ive learned about express would be the use of middleware and how to build build RESTful web services that work with JSON
 
-- [ ] How can a client send data to an API?
+- [x] What is Express Middleware?
 
-- [ ] What can the API return to help clients know if a request was successful?
+ Express middleware is basically an array of functions.
 
-- [ ] What Express feature can we use to partition an application into sub-applications?
+- [x] How can a client send data to an API?
+
+ A client can send data to an API via url endpoints 
+
+- [x] What can the API return to help clients know if a request was successful?
+
+A client can send the API  a status code to tell the client if the request was successful.
+
+- [x] What Express feature can we use to partition an application into sub-applications?
+
+We can split resources by using Routers.
 
 ## Minimum Viable Product
 
-- [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
-- [ ] Configure an _npm script_ named _"start"_ that will execute your code using _node_.
+- [x] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
+- [x] Configure an _npm script_ named _"start"_ that will execute your code using _node_.
 - [ ] Write endpoints to manage (CRUD) **chores**.
 - [ ] Hard code an array with a few **people**. No need to write endpoints to manage them.
 - [ ] Write an endpoint that accepts a person's `id` and returns the list of **chores** for the person. if a person with that `id` does not exist in the **people** array, the endpoint should return a `404` status code and a message. If the person exists, but has no **chores** assigned, return an empty array.
